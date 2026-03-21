@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent Host - Sandbox Test</title>
+    <style>
+        body { font-family: sans-serif; background: #eef; text-align: center; }
+        iframe { width: 80%; height: 500px; border: 3px solid #333; background: white; }
+    </style>
+</head>
+<body>
+    <h1>Parent Window (Target)</h1>
+    <p>Jika berhasil, halaman ini akan berubah jadi Google saat lo lepas Enter di dalam iframe.</p>
+    
+    <iframe 
+        src="https://mhrdkaa.github.io/site-a.html" 
+        sandbox="allow-scripts allow-top-navigation-by-user-activation">
+    </iframe>
+</body>
+</html>
